@@ -1,0 +1,74 @@
+{
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "Salada Ceasear",
+      "image": "https://i.imgur.com/zfw2Vx6.jpeg",
+      "rating": 4.9,
+      "reviewsCount": "(125+)",
+      "isVerified": true,
+      "isFavorite": true,
+      "mainTag": "Sem Gluten",
+      "priceRange": "$$$",
+      "categories": ["saladas", "proteina"],
+      "distance": "1.5km",
+      "status": "Aberto"
+    },
+    {
+      "id": "2",
+      "name": "Omelete",
+      "image": "https://i.imgur.com/WlQYOIr.jpeg",
+      "rating": 4.7,
+      "reviewsCount": "(125+)",
+      "isVerified": true,
+      "isFavorite": false,
+      "mainTag": "Sem Gluten",
+      "priceRange": "$",
+      "categories": ["ovo", "almoço", "café da manhã"],
+      "distance": "2.5km",
+      "status": "Aberto"
+    },
+    {
+      "id": "3",
+      "name": "Suco Verde",
+      "image": "https://i.imgur.com/Fph8faX.jpeg",
+      "rating": 3.9,
+      "reviewsCount": "(25+)",
+      "isVerified": true,
+      "isFavorite": false,
+      "mainTag": "Sucos Naturais",
+      "priceRange": "$$",
+      "categories": ["bebida", "vegano", "saudável"],
+      "distance": "3.5km",
+      "status": "Aberto"
+    },
+    {
+      "id": "4",
+      "name": "100 peças Sushi",
+      "image": "https://i.imgur.com/JyyL4FA.jpeg",
+      "rating": 4.0,
+      "reviewsCount": "(80+)",
+      "isVerified": false,
+      "isFavorite": true,
+      "mainTag": "Frutos do Mar",
+      "priceRange": "$$",
+      "categories": ["sushi", "sashimi", "temaki"],
+      "distance": "4.2km",
+      "status": "Fechado"
+    },
+    {
+      "id": "5",
+      "name": "X-Bacon C/Fritas",
+      "image": "https://i.imgur.com/w8Td6rC.jpeg",
+      "rating": 4.2,
+      "reviewsCount": "(95+)",
+      "isVerified": true,
+      "isFavorite": false,
+      "mainTag": "Sem Gluten",
+      "priceRange": "$",
+      "categories": ["hamburguer", "fritas", "lanche"],
+      "distance": "5.0km",
+      "status": "Aberto"
+    }
+  ]
+}
