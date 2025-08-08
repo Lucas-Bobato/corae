@@ -36,15 +36,12 @@ export function Suggestion() {
         data={restaurants.filter(item => item.status === 'Aberto')}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <RestaurantCard {...item} />}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        className='px-4'
       />
     );
   }
 
   return (
-    <View className='px-4'>
+    <View className='px-4 flex flex-col'>
       <Text className='font-bold text-xl color-gray mb-4 pt-8'>Sugestões para você</Text>
       {renderContent()}
     </View>
