@@ -1,28 +1,14 @@
-import { ScrollView, SafeAreaView } from "react-native";
-import { Banner } from "../components/banner";
-import { Header } from "../components/header";
-import { Search } from "../components/search";
-import { Suggestion } from "../components/suggestion";
-import { Footer } from "../components/footer";
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { LoginHeader } from '../components/header/login';
+import { View, Text } from 'react-native';
 
 export default function Index() {
   return (
-  <SafeAreaView className="w-full flex-1 pt-4 mb-1">
-    <Header />
-      <ScrollView
-      style={{ flex: 1 }}
-      className="bg-white"
-      showsVerticalScrollIndicator={false}>
-
-        <Search />
-
-        <Banner />
-
-        <Suggestion />
-
-      </ScrollView>
-      <Footer />
+    <SafeAreaView className="flex-1">
+      <LoginHeader />
+      <View>
+        <Text>Login</Text>
+      </View>
     </SafeAreaView>
-
   );
 }
