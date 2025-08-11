@@ -1,28 +1,25 @@
-import { View, ScrollView } from "react-native";
+import { ScrollView, SafeAreaView } from "react-native";
 import { Header } from "../components/header";
-import Constants from "expo-constants";
 import { Search } from "../components/search";
 import { Suggestion } from "../components/suggestion";
-
-
-const statusBarHeight = Constants.statusBarHeight;
+import { Footer } from "../components/footer";
 
 export default function Index() {
   return (
-    <ScrollView
-    style={{ flex: 1 }}
-    className="bg-white"
-    showsVerticalScrollIndicator={false}>
-      <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8}}>
+  <SafeAreaView className="w-full px-4 flex-1 pt-4 mb-1">
+      <ScrollView
+      style={{ flex: 1 }}
+      className="bg-white"
+      showsVerticalScrollIndicator={false}>
         <Header />
 
         <Search />
 
         <Suggestion />
 
-        </View>
+      </ScrollView>
+      <Footer />
+    </SafeAreaView>
 
-
-    </ScrollView>
   );
 }

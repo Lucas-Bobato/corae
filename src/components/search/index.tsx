@@ -6,7 +6,7 @@ export function Search() {
     <View className="w-full flex-row items-center gap-2 bg-gray-100 p-3 rounded-lg border border-gray-200">
       <Ionicons name="search-outline" size={20} color="gray" />
         <TextInput
-          placeholder="Procure por pratos ou comércios"
+          placeholder="Procure por restaurantes"
           className="flex-1 text-base"
           placeholderTextColor="#999"
         />

@@ -1,9 +1,9 @@
 import { View, Pressable, Text, Image } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Feather } from '@expo/vector-icons';
 
 export function Header() {
   return (
-    <View className="bg-white pt-4 pb-4 px-4 shadow-sm">
+    <View className="bg-white pt-4 pb-2 px-1 shadow-sm">
       <View className="w-full flex-row justify-between items-center mb-4">
         <Image
           source={require('../../assets/images/logo-corae.png')}
@@ -21,7 +21,7 @@ export function Header() {
         <View/>
 
         <Pressable>
-          <Ionicons name="person-outline" size={24} color="#624e33" />
+          <Feather name="shopping-cart" size={24} color="#624e33" />
         </Pressable>
       </View>
     </View>

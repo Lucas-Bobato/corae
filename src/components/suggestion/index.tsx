@@ -10,7 +10,7 @@ export function Suggestion() {
   useEffect(() => {
     async function fetchRestaurants() {
       try {
-        const response = await fetch('http://10.1.1.35:3000/restaurants');
+        const response = await fetch('http://10.1.1.30:3000/restaurants');
         const data: RestaurantProps[] = await response.json();
         setRestaurants(data);
       } catch (err) {
@@ -35,6 +35,8 @@ export function Suggestion() {
       <FlatList
         data={restaurants.filter(item => item.status === 'Aberto')}
         keyExtractor={(item) => item.id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <RestaurantCard {...item} />}
       />
     );
@@ -42,7 +44,7 @@ export function Suggestion() {
 
   return (
     <View className='px-4 flex flex-col'>
-      <Text className='font-bold text-xl color-gray mb-4 pt-8'>Sugestões para você</Text>
+      <Text className='font-bold text-xl color-gray mb-4 pt-8'>Recomendados para você</Text>
       {renderContent()}
     </View>
   );

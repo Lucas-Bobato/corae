@@ -12,114 +12,43 @@ export interface RestaurantProps {
   categories: string[];
   distance: string;
   status: string;
+  waitTime: string;
 }
 
 export function RestaurantCard(props: RestaurantProps) {
   return (
-    <View style={styles.card}>
+    <View className='w-64 bg-white rounded-lg border border-gray-200 mr-4 shadow-sm'>
       <ImageBackground
         source={{ uri: props.image }}
-        style={styles.image}
+        className='w-full h-32 justify-between'
         imageStyle={{ borderRadius: 8 }}
       >
-        <View style={styles.imageOverlay}>
+        <View className='flex-row justify-between p-2'>
           {props.isVerified && (
-            <View style={styles.verifiedBadge}>
+            <View className='flex-row items-center bg-green-600 px-2 py-1 rounded-full'>
               <Ionicons name="checkmark-circle" size={14} color="#FFF" />
-              <Text style={styles.verifiedText}>Verificado</Text>
+              <Text className='text-white text-xs font-bold ml-1'>Verificado</Text>
             </View>
           )}
           <Ionicons
             name={props.isFavorite ? 'heart' : 'heart-outline'}
             size={24}
             color={props.isFavorite ? '#E51D37' : '#FFF'}
-            style={styles.favoriteIcon}
+            className='text-shadow'
           />
         </View>
       </ImageBackground>
-      <View style={styles.infoContainer}>
-        <Text style={styles.name}>{props.name}</Text>
-        <View style={styles.ratingContainer}>
+      <View className='p-3'>
+        <Text className='font-bold text-lg'>{props.name}</Text>
+        <View className='flex-row items-center'>
           <Ionicons name="star" size={16} color="#FFC107" />
-          <Text style={styles.ratingText}>{props.rating}</Text>
-          <Text style={styles.reviewsCount}>{props.reviewsCount}</Text>
+          <Text className='ml-1'>{props.rating}</Text>
+          <Text className='ml-2 text-gray-500'>{props.reviewsCount}</Text>
         </View>
-        <Text style={styles.detailsText}>
-          {props.categories.join(' • ')} • {props.distance}
+        <Text className='text-gray-600 text-xs'>
+          {props.distance} • {props.waitTime}
         </Text>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  card: {
-    width: 250,
-    backgroundColor: '#FFF',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#E0E0E0',
-    marginRight: 15,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-  },
-  image: {
-    width: '100%',
-    height: 120,
-    justifyContent: 'space-between',
-  },
-  imageOverlay: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 8,
-  },
-  verifiedBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 150, 0, 0.8)',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
-  },
-  verifiedText: {
-    color: '#FFF',
-    fontSize: 12,
-    fontWeight: 'bold',
-    marginLeft: 4,
-  },
-  favoriteIcon: {
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: { width: 0, height: 1 },
-    textShadowRadius: 2,
-  },
-  infoContainer: {
-    padding: 12,
-  },
-  name: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  ratingContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 4,
-  },
-  ratingText: {
-    marginLeft: 4,
-    color: '#FFC107',
-    fontWeight: 'bold',
-  },
-  reviewsCount: {
-    marginLeft: 8,
-    color: '#757575',
-    fontSize: 12,
-  },
-  detailsText: {
-    color: '#757575',
-    fontSize: 12,
-  },
-});
