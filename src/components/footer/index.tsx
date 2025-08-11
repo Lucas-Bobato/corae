@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 export function Footer() {
   return (
-    <View className="bg-white pt-4 pb-4 px-4 shadow-sm flex flex-row">
+    <View className="bg-white pt-4 pb-4 px-4 flex flex-row">
         <View className="flex-1 flex-row justify-between items-center">
           <Pressable className='items-center pl-5'>
             <Ionicons name="home-outline" size={16} color="#624e33" />

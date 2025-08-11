@@ -44,7 +44,7 @@ export function Suggestion() {
 
   return (
     <View className='px-4 flex flex-col'>
-      <Text className='font-bold text-xl color-gray mb-4 pt-8'>Recomendados para você</Text>
+      <Text className='font-bold text-xl color-gray mb-4'>Recomendados para você</Text>
       {renderContent()}
     </View>
   );

@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 export function Search() {
   return (
-    <View className="w-full flex-row items-center gap-2 bg-gray-100 p-3 rounded-lg border border-gray-200">
+    <View className="mx-4 flex-row px-4 items-center gap-2 bg-gray-100 p-3 rounded-lg border border-gray-200">
       <Ionicons name="search-outline" size={20} color="gray" />
         <TextInput
           placeholder="Procure por restaurantes"
