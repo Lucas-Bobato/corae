@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Pressable, Text, Animated } from 'react-native';
-import { FavoriteRestaurants } from '../favorite/restaurants';
-import { FavoriteFoods } from '../favorite/foods';
+import { FavoriteRestaurants } from './restaurants';
 
 interface TabMeasures {
   x: number;
@@ -89,7 +88,7 @@ export function TabsFavorite() {
         {activeTab === 0 ? (
           <FavoriteRestaurants />
         ) : (
-          <FavoriteFoods />
+          <Text>Aqui vai as comidas favoritas</Text>
         )}
       </View>
     </View>

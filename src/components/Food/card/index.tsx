@@ -13,48 +13,11 @@ export interface FoodProps {
   distance: string;
   status: string;
   waitTime: string;
-  layout?: 'card' | 'list';
 }
 
 // Função card como padrão
-export function FoodCard({ layout = 'card', ...props }: FoodProps) {
-
-  // Card Favoritos
-
-  if (layout === 'list') {
-    return (
-      <Pressable className="w-full flex-row items-center mb-5">
-        <Image
-          source={{ uri: props.image }}
-          className="w-20 h-20 rounded-lg mr-4 overflow-hidden justify-between p-1"
-        />
-        <View className="flex-1">
-          <Text className="text-base font-bold text-gray-800 mb-1" numberOfLines={1}>
-            {props.name}
-          </Text>
-          <View className="flex-row items-center">
-            <Ionicons name="star" size={16} color="#FFC107" />
-            <Text className="text-sm text-gray-700 font-semibold mx-1">
-              {props.rating}
-            </Text>
-            <Text className="text-sm text-gray-500">• {props.reviewsCount}</Text>
-          </View>
-        </View>
-
-        <View>
-          <Ionicons
-            name={props.isFavorite ? 'heart' : 'heart-outline'}
-            size={24}
-            color={props.isFavorite ? '#E53935' : '#757575'}
-          />
-        </View>
-      </Pressable>
-    );
-  }
-
-
-  // Card da home
-
+export function FoodCard(props : FoodProps) {
+  
   return (
     <View className='w-64 bg-white rounded-lg border border-gray-200 mr-4 shadow-sm'>
       <ImageBackground

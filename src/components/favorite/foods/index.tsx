@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { FoodProps, FoodCard } from '../../suggestion/FoodCard';
+import { FoodProps, FoodCard } from '../../Food/card';
 
-export function FavoriteFoods() {
+export function SuggestionFoods() {
   const [foods, setFoods] = useState<FoodProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

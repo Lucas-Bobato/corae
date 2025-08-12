@@ -6,7 +6,7 @@ export function Header() {
     <View className="bg-white pt-4 pb-2 px-4 shadow-sm">
       <View className="w-full flex-row justify-between items-center align-middle mb-4">
         <Image
-          source={require('../../assets/images/logo-corae-no-text.png')}
+          source={require('../../../assets/images/logo-corae-no-text.png')}
           className="h-12 w-24"
         />
 

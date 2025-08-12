@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { RestaurantsProps, RestaurantCard } from '../../suggestion/RestaurantsCard';
+import { RestaurantsProps, RestaurantList } from '../../restaurants/list';
 
 export function FavoriteRestaurants() {
   const [restaurants, setRestaurants] = useState<RestaurantsProps[]>([]);
@@ -36,7 +36,7 @@ export function FavoriteRestaurants() {
           data={restaurants.filter(item => item.isFavorite === true)}
           keyExtractor={(item) => item.id}
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <RestaurantCard {...item} />}
+          renderItem={({ item }) => <RestaurantList {...item} />}
         />
       );
     }

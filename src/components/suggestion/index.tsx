@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { FoodsCard, FoodsProps } from './FoodCard';
+import { FoodCard, FoodProps } from '../Food/card';
 
 export function Suggestion() {
-  const [foods, setFoods] = useState<FoodsProps[]>([]);
+  const [foods, setFoods] = useState<FoodProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -11,7 +11,7 @@ export function Suggestion() {
     async function fetchFoods() {
       try {
         const response = await fetch('http://10.1.1.28:3000/foods');
-        const data: FoodsProps[] = await response.json();
+        const data: FoodProps[] = await response.json();
         setFoods(data);
       } catch (err) {
         setError('Erro ao carregar alimentos');
@@ -37,7 +37,7 @@ export function Suggestion() {
         keyExtractor={(item) => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => <FoodsCard {...item} />}
+        renderItem={({ item }) => <FoodCard {...item} />}
       />
     );
   }

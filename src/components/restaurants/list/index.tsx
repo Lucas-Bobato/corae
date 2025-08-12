@@ -15,7 +15,7 @@ export interface RestaurantsProps {
   waitTime: string;
 }
 
-export function RestaurantCard(props: RestaurantsProps) {
+export function RestaurantList(props: RestaurantsProps) {
   return (
     <Pressable className="w-full flex-row items-center mb-5">
       <Image
