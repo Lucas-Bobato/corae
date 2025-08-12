@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
-import { RestaurantCard, RestaurantProps } from './RestaurantCard';
+import { View, Text, FlatList, ActivityIndicator } from 'react-native';
+import { FoodsCard, FoodsProps } from './FoodCard';
 
 export function Suggestion() {
-  const [restaurants, setRestaurants] = useState<RestaurantProps[]>([]);
+  const [foods, setFoods] = useState<FoodsProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchRestaurants() {
+    async function fetchFoods() {
       try {
-        const response = await fetch('http://10.1.1.30:3000/restaurants');
-        const data: RestaurantProps[] = await response.json();
-        setRestaurants(data);
+        const response = await fetch('http://10.1.1.28:3000/foods');
+        const data: FoodsProps[] = await response.json();
+        setFoods(data);
       } catch (err) {
-        setError('Erro ao carregar restaurantes');
+        setError('Erro ao carregar alimentos');
       } finally {
         setLoading(false);
       }
     }
 
-    fetchRestaurants();
+    fetchFoods();
   }, []);
 
   function renderContent() {
@@ -33,11 +33,11 @@ export function Suggestion() {
 
     return (
       <FlatList
-        data={restaurants.filter(item => item.status === 'Aberto')}
+        data={foods.filter(item => item.status === 'Aberto')}
         keyExtractor={(item) => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => <RestaurantCard {...item} />}
+        renderItem={({ item }) => <FoodsCard {...item} />}
       />
     );
   }

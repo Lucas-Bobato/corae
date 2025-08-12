@@ -1,14 +1,18 @@
+import { ScrollView} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { LoginHeader } from '../components/header/login';
-import { View, Text } from 'react-native';
+import { Footer } from '../components/footer';
+import { HeaderFavorite } from '../components/header/favorite';
+import { Tabs } from 'expo-router';
+import { TabsFavorite } from '../components/tabs';
 
-export default function Index() {
+export default function Favorite() {
   return (
-    <SafeAreaView className="flex-1">
-      <LoginHeader />
-      <View>
-        <Text>Login</Text>
-      </View>
+    <SafeAreaView>
+      <ScrollView>
+        <HeaderFavorite />
+        <TabsFavorite />
+      </ScrollView>
+      <Footer />
     </SafeAreaView>
   );
 }
