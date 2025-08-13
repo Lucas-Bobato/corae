@@ -1,15 +1,14 @@
-import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
-import { TabsFavorite } from '../components/favorite';
-import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
-export default function Favorite() {
+export default function Cart() {
   const router = useRouter();
 
   return (
-    <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
+  <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
 
       <Header
         leftComponent={
@@ -18,20 +17,19 @@ export default function Favorite() {
           </TouchableOpacity>
         }
         centerComponent={
-            <Text className="font-bold text-xl text-black">Favoritos</Text>
+            <Text className="font-bold text-xl text-black">Carrinho</Text>
         }
         rightComponent={
             <Ionicons name="heart" size={24} color="transparent" />
         }
       />
-      <View className="bg-white flex-1">
 
-        <TabsFavorite />
-
-      </View>
-
+      <ScrollView
+      className="bg-white flex-1"
+      showsVerticalScrollIndicator={false}>
+        <Text className="font-bold text-lg">Carrinho de Compras</Text>
+      </ScrollView>
       <Footer />
-      
     </SafeAreaView>
   );
 }

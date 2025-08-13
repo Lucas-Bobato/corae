@@ -1,7 +1,11 @@
 import { View } from 'react-native';
+import { Footer } from '../components/footer';
 
-export function Pedidos() {
+export default function Pedidos() {
  return (
-   <View/>
-  )
+   <View>
+
+     <Footer />
+   </View>
+  );
 }

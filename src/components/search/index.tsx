@@ -1,4 +1,4 @@
-import { View, Pressable, TextInput } from 'react-native';
+import { View, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export function Search() {
@@ -10,9 +10,9 @@ export function Search() {
           className="flex-1 text-base"
           placeholderTextColor="#999"
         />
-        <Pressable>
+        <TouchableOpacity>
           <Ionicons name="filter" size={20} color="#adc472" />
-        </Pressable>
+        </TouchableOpacity>
       </View>
   );
 }
