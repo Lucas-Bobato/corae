@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Pressable, Text, Animated } from 'react-native';
 import { FavoriteRestaurants } from './restaurants';
+import { FavoriteFoods } from './foods';
 
 interface TabMeasures {
   x: number;
@@ -48,13 +49,13 @@ export function TabsFavorite() {
 
   return (
     <View>
-      <View className="flex-row w-full justify-around border-b-2 border-black/10 relative">
+      <View className="flex-row w-full justify-around border-b-2 border-black/10">
         <Pressable
           onLayout={(event) => measureTab(event, 0)}
           onPress={() => setActiveTab(0)}
           className="p-4"
         >
-          <Text className={`font-bold text-lg ${activeTab === 0 ? 'text-black' : 'text-black/50'}`}>
+          <Text className={`font-bold text-lg ${activeTab === 0 ? 'text-black' : 'text-[#adc472]'}`}>
             Restaurantes Favoritos
           </Text>
         </Pressable>
@@ -64,7 +65,7 @@ export function TabsFavorite() {
           onPress={() => setActiveTab(1)}
           className="p-4"
         >
-          <Text className={`font-bold text-lg ${activeTab === 1 ? 'text-black' : 'text-black/50'}`}>
+          <Text className={`font-bold text-lg ${activeTab === 1 ? 'text-black' : 'text-[#adc472]'}`}>
             Comidas Favoritas
           </Text>
         </Pressable>
@@ -75,8 +76,8 @@ export function TabsFavorite() {
                 position: 'absolute',
                 bottom: -2,
                 left: 0,
-                height: 2,
-                backgroundColor: '#624e33',
+                height: 4,
+                backgroundColor: '#adc472',
                 width: widthAnim,
                 transform: [{ translateX: slideAnim }],
               }}
@@ -88,7 +89,7 @@ export function TabsFavorite() {
         {activeTab === 0 ? (
           <FavoriteRestaurants />
         ) : (
-          <Text>Aqui vai as comidas favoritas</Text>
+          <FavoriteFoods />
         )}
       </View>
     </View>

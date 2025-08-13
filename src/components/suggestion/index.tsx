@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { FoodCard, FoodProps } from '../Food/card';
+import { FoodCard, FoodProps } from '../food/card';
 
 export function Suggestion() {
   const [foods, setFoods] = useState<FoodProps[]>([]);

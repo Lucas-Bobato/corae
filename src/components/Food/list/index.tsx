@@ -1,21 +1,8 @@
 import { View, Text, Image, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { FoodProps } from '../../food/card';
 
-export interface RestaurantsProps {
-  id: string;
-  name: string;
-  image: string;
-  rating: number;
-  reviewsCount: string;
-  isVerified: boolean;
-  isFavorite: boolean;
-  categories: string[];
-  distance: string;
-  status: string;
-  waitTime: string;
-}
-
-export function RestaurantList(props: RestaurantsProps) {
+export function FoodList(props: FoodProps) {
   return (
     <Pressable className="w-full flex-row items-center mb-5">
       <Image

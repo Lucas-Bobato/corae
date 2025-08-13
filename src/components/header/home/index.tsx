@@ -14,14 +14,14 @@ export function Header() {
           <Text className="text-center text-gray-500 text-xs">Entregar em</Text>
           <Pressable className="flex-row items-center gap-1">
             <Text className="font-bold text-sm">R. Lorem Ipsum, 123</Text>
-            <Ionicons name="chevron-down" size={16} color="#624e33" />
+            <Ionicons name="chevron-down" size={16} color="#adc472" />
           </Pressable>
         </View>
 
         <View/>
 
         <Pressable>
-          <Feather name="shopping-cart" size={24} color="#624e33" />
+          <Feather name="shopping-cart" size={24} color="#adc472" />
         </Pressable>
       </View>
     </View>

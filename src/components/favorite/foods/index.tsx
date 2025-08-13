@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { FoodProps, FoodCard } from '../../Food/card';
+import { FoodProps } from '../../food/card';
+import { FoodList } from '../../food/list';
 
-export function SuggestionFoods() {
+export function FavoriteFoods() {
   const [foods, setFoods] = useState<FoodProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -36,7 +37,7 @@ export function SuggestionFoods() {
           data={foods.filter(item => item.isFavorite === true)}
           keyExtractor={(item) => item.id}
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <FoodCard {...item} />}
+          renderItem={({ item }) => <FoodList {...item} />}
         />
       );
     }

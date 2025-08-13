@@ -2,7 +2,7 @@ import { View, Text, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
-export function HeaderFavorite() {
+export function HeaderPerfil() {
   const router = useRouter();
 
   return (
@@ -10,7 +10,7 @@ export function HeaderFavorite() {
       <Pressable onPress={() => router.push('/home')}>
       <Ionicons name="arrow-back" size={24} color="black" />
       </Pressable>
-      <Text className="font-bold text-lg" style={{ color: "black" }}>Favoritos</Text>
+      <Text className="font-bold text-lg" style={{ color: "black" }}>Perfil</Text>
       <Ionicons name="person-outline" size={24} color="transparent" />
     </View>
   );
