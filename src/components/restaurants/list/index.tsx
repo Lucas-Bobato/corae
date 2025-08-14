@@ -29,10 +29,10 @@ export function RestaurantList(props: RestaurantsProps) {
         </Text>
         
         <View className="flex-row items-center">
-          <Text className="text-sm text-[#adc472] font-semibold mx-1">
+          <Text className="text-sm text-[#7D9C4A] font-semibold mx-1">
             {props.rating}
           </Text>
-          <Ionicons name="star" size={16} color="#adc472" />
+          <Ionicons name="star" size={16} color="#7D9C4A" />
           <Text className="text-sm text-black/50">• {props.reviewsCount}</Text>
         </View>
       </View>

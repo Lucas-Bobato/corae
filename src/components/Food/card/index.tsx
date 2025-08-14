@@ -13,9 +13,9 @@ export interface FoodProps {
   distance: string;
   status: string;
   waitTime: string;
+  price: string;
 }
 
-// Função card como padrão
 export function FoodCard(props : FoodProps) {
   
   return (
@@ -40,14 +40,15 @@ export function FoodCard(props : FoodProps) {
           />
         </View>
       </ImageBackground>
-      <View className='p-3'>
+      <View className='px-3 py-1'>
         <Text className='font-bold text-lg'>{props.name}</Text>
+        <Text className='text-[#54d729] text-lg mb-1'>R$ {props.price}</Text>
         <View className='flex-row items-center'>
           <Ionicons name="star" size={16} color="#FFC107" />
           <Text className='ml-1'>{props.rating}</Text>
           <Text className='ml-2 text-gray-500'>{props.reviewsCount}</Text>
         </View>
-        <Text className='text-gray-600 text-xs'>
+        <Text className='text-gray-600 text-sm'>
           {props.distance} • {props.waitTime}
         </Text>
       </View>

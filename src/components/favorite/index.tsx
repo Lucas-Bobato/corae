@@ -55,7 +55,7 @@ export function TabsFavorite() {
           onPress={() => setActiveTab(0)}
           className="p-4"
         >
-          <Text className={`font-bold text-lg ${activeTab === 0 ? 'text-black' : 'text-[#adc472]'}`}>
+          <Text className={`font-bold text-lg ${activeTab === 0 ? 'text-black' : 'text-[#7D9C4A]'}`}>
             Restaurantes Favoritos
           </Text>
         </Pressable>
@@ -65,7 +65,7 @@ export function TabsFavorite() {
           onPress={() => setActiveTab(1)}
           className="p-4"
         >
-          <Text className={`font-bold text-lg ${activeTab === 1 ? 'text-black' : 'text-[#adc472]'}`}>
+          <Text className={`font-bold text-lg ${activeTab === 1 ? 'text-black' : 'text-[#7D9C4A]'}`}>
             Comidas Favoritas
           </Text>
         </Pressable>

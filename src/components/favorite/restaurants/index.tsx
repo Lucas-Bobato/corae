@@ -10,7 +10,7 @@ export function FavoriteRestaurants() {
   useEffect(() => {
     async function fetchRestaurants() {
       try {
-        const response = await fetch('http://10.1.1.28:3000/restaurants');
+        const response = await fetch('http://10.1.1.7:3000/restaurants');
         const data: RestaurantsProps[] = await response.json();
         setRestaurants(data);
       } catch (err) {

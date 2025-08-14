@@ -6,7 +6,7 @@ export function ProfileInfo() {
   <View className='items-center justify-center flex-1'>
     <Ionicons name="person-circle-outline" size={150} color="black" />
     <Text className="text-2xl font-bold">Bruno Deud</Text>
-    <Text className="text-lg text-[#adc472]">Membro do Clube</Text>
+    <Text className="text-lg text-[#7D9C4A]">Membro do Clube</Text>
   </View>
   );
 }

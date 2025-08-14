@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 import { TabsFavorite } from '../components/favorite';
@@ -10,6 +10,7 @@ export default function Favorite() {
 
   return (
     <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
+    <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
       <Header
         leftComponent={

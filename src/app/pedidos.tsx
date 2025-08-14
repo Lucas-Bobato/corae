@@ -1,11 +1,12 @@
-import { View } from 'react-native';
+import { View, SafeAreaView, StatusBar } from 'react-native';
 import { Footer } from '../components/footer';
 
 export default function Pedidos() {
  return (
-   <View>
+   <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
+     <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
      <Footer />
-   </View>
+   </SafeAreaView>
   );
 }

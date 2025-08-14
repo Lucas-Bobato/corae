@@ -1,4 +1,4 @@
-import { ScrollView, TouchableOpacity, SafeAreaView, Text } from 'react-native';
+import { ScrollView, TouchableOpacity, SafeAreaView, Text, StatusBar } from 'react-native';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,6 +12,7 @@ export default function Perfil() {
 
   return (
   <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
+    <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
       <Header
         leftComponent={

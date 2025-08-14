@@ -1,4 +1,4 @@
-import { ScrollView, SafeAreaView, Image, View, Text, Pressable, TouchableOpacity } from "react-native";
+import { ScrollView, SafeAreaView, Image, View, Text, Pressable, TouchableOpacity, StatusBar } from "react-native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 import { Banner } from "../components/banner";
 import { Header } from "../components/header";
@@ -12,6 +12,7 @@ export default function Home() {
 
   return (
   <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
+    <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <Header
         leftComponent={
           <Image
@@ -25,13 +26,13 @@ export default function Home() {
             <Text className="text-center text-gray-500 text-xs">Entregar em</Text>
             <Pressable className="flex-row items-center gap-1">
               <Text className="font-bold text-sm">R. Lorem Ipsum, 123</Text>
-              <Ionicons name="chevron-down" size={16} color="#adc472" />
+              <Ionicons name="chevron-down" size={16} color="#7D9C4A" />
             </Pressable>
           </View>
         }
         rightComponent={
           <TouchableOpacity onPress={() => router.push('/cart')}>
-            <Feather name="shopping-cart" size={24} color="#adc472" />
+            <Feather name="shopping-cart" size={24} color="#7D9C4A" />
           </TouchableOpacity>
         }
       />

@@ -12,32 +12,32 @@ export function Footer() {
           className='items-center pl-5'
           onPress={() => router.push('/home')}
         >
-          <Ionicons name="home-outline" size={16} color="#adc472" />
-          <Text className="font-bold text-sm" style={{ color: "#adc472" }}>Home</Text>
+          <Ionicons name="home-outline" size={16} color="#7D9C4A" />
+          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           className='items-center'
           onPress={() => router.push('/favorite')}
         >
-          <Ionicons name="heart-outline" size={16} color="#adc472" />
-          <Text className="font-bold text-sm" style={{ color: "#adc472" }}>Favoritos</Text>
+          <Ionicons name="heart-outline" size={16} color="#7D9C4A" />
+          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Favoritos</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           className='items-center'
           onPress={() => router.push('/pedidos')}
         >
-          <Ionicons name="receipt-outline" size={16} color="#adc472" />
-          <Text className="font-bold text-sm" style={{ color: "#adc472" }}>Pedidos</Text>
+          <Ionicons name="receipt-outline" size={16} color="#7D9C4A" />
+          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Pedidos</Text>
         </TouchableOpacity>
         
         <TouchableOpacity
           className='items-center pr-5'
           onPress={() => router.push('/profile')}
         >
-          <Ionicons name="person-outline" size={16} color="#adc472" />
-          <Text className="font-bold text-sm" style={{ color: "#adc472" }}>Perfil</Text>
+          <Ionicons name="person-outline" size={16} color="#7D9C4A" />
+          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Perfil</Text>
         </TouchableOpacity>
       </View>
     </View>
