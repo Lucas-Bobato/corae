@@ -7,7 +7,7 @@ export default function Login() {
   const router = useRouter();
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
       <View className="p-4">
         <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="black" />

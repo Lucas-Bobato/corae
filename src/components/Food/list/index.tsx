@@ -1,8 +1,8 @@
 import { View, Text, Image, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { FoodProps } from '../../food/card';
+import { FoodProps } from '../card';
 
-export function FoodList(props: FoodProps) {
+export function FoodListItem(props: FoodProps) {
   return (
     <Pressable className="w-full flex-row items-center mb-5">
       <Image

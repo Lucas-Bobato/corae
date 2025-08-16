@@ -43,7 +43,7 @@ export default function CheckoutScreen() {
           </TouchableOpacity>
         }
         centerComponent={
-          <Text className="font-bold text-xl text-black">Sacola</Text>
+          <Text className="font-bold text-xl text-black">Carrinho</Text>
         }
         rightComponent={
           <TouchableOpacity>

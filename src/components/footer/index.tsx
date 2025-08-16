@@ -6,38 +6,46 @@ export function Footer() {
   const router = useRouter();
 
   return (
-    <View className="bg-white pt-4 pb-4 px-4 flex flex-row">
-      <View className="flex-1 flex-row justify-between items-center">
+    <View className="bg-white pt-4 pb-4 px-2 flex flex-row">
+      <View className="flex-1 flex-row justify-around items-center">
         <TouchableOpacity
-          className='items-center pl-5'
+          className='items-center'
           onPress={() => router.push('/home')}
         >
-          <Ionicons name="home-outline" size={16} color="#7D9C4A" />
-          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Home</Text>
+          <Ionicons name="home-outline" size={24} color="#7D9C4A" />
+          <Text className="font-bold text-xs mt-1" style={{ color: "#7D9C4A" }}>Início</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          className='items-center'
+          onPress={() => router.push('/restaurants')}
+        >
+          <Ionicons name="restaurant-outline" size={24} color="#7D9C4A" />
+          <Text className="font-bold text-xs mt-1" style={{ color: "#7D9C4A" }}>Restaurantes</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           className='items-center'
           onPress={() => router.push('/favorite')}
         >
-          <Ionicons name="heart-outline" size={16} color="#7D9C4A" />
-          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Favoritos</Text>
+          <Ionicons name="heart-outline" size={24} color="#7D9C4A" />
+          <Text className="font-bold text-xs mt-1" style={{ color: "#7D9C4A" }}>Favoritos</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           className='items-center'
           onPress={() => router.push('/pedidos')}
         >
-          <Ionicons name="receipt-outline" size={16} color="#7D9C4A" />
-          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Pedidos</Text>
+          <Ionicons name="receipt-outline" size={24} color="#7D9C4A" />
+          <Text className="font-bold text-xs mt-1" style={{ color: "#7D9C4A" }}>Pedidos</Text>
         </TouchableOpacity>
         
         <TouchableOpacity
-          className='items-center pr-5'
+          className='items-center'
           onPress={() => router.push('/profile')}
         >
-          <Ionicons name="person-outline" size={16} color="#7D9C4A" />
-          <Text className="font-bold text-sm" style={{ color: "#7D9C4A" }}>Perfil</Text>
+          <Ionicons name="person-outline" size={24} color="#7D9C4A" />
+          <Text className="font-bold text-xs mt-1" style={{ color: "#7D9C4A" }}>Perfil</Text>
         </TouchableOpacity>
       </View>
     </View>

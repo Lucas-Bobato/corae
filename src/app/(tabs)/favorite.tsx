@@ -14,7 +14,7 @@ export default function Favorite() {
 
       <Header
         leftComponent={
-          <TouchableOpacity onPress={() => router.back("/")}>
+          <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={24} color="black" />
           </TouchableOpacity>
         }

@@ -60,7 +60,7 @@ const CartList = ({ ListHeaderComponent, ListFooterComponent }: CartListProps) =
   useEffect(() => {
     async function fetchFoods() {
       try {
-        const response = await fetch('http://10.1.1.7:3000/foods');
+        const response = await fetch('http://10.1.1.20:3000/foods');
         const data = await response.json();
 
         const formattedData = data.map((food: any) => ({

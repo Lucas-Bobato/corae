@@ -6,7 +6,7 @@ export default function GetStarted() {
   const router = useRouter();
 
   return (
-    <SafeAreaView className="flex-1 bg-white items-center justify-center">
+    <SafeAreaView className="w-full pt-4 mb-auto flex-1 bg-white items-center justify-center">
       <View className="flex-1 items-center justify-center">
         <Image
           source={require('../assets/images/logo-corae.png')}

@@ -16,7 +16,7 @@ export default function Perfil() {
 
       <Header
         leftComponent={
-          <TouchableOpacity onPress={() => router.back("/")}>
+          <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={24} color="black" />
           </TouchableOpacity>
         }
@@ -37,8 +37,8 @@ export default function Perfil() {
         <SectionTitle title="Conta" />
         <SettingsItem icon="heart-outline" label="Favoritos" onPress={() => router.push('/favorite')} />
         <SettingsItem icon="receipt-outline" label="Histórico de Pedidos" onPress={() => router.push('/pedidos')} />
-        <SettingsItem icon="card-outline" label="Métodos de pagamento" onPress={() => router.push('/paymentMethods')} />
-        <SettingsItem icon="location-outline" label="Endereços" onPress={() => router.push('/addresses')} />
+        <SettingsItem icon="card-outline" label="Métodos de pagamento" onPress={() => router.push('/payment')} />
+        <SettingsItem icon="location-outline" label="Endereços" onPress={() => router.push('/address')} />
 
         <SectionTitle title="Configurações" />
         <SettingsItem icon="notifications-outline" label="Notificações" onPress={() => router.push('/notifications')} />

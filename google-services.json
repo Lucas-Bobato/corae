@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "82373488724",
+    "project_id": "corae-34666",
+    "storage_bucket": "corae-34666.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82373488724:android:1a4756bab11494eb19bdc1",
+        "android_client_info": {
+          "package_name": "br.com.corae"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlJVuPz_g_Sa5rJhDmhHD-1WgKzPY4BcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

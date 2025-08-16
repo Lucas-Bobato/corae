@@ -10,7 +10,7 @@ export function Suggestion() {
   useEffect(() => {
     async function fetchFoods() {
       try {
-        const response = await fetch('http://10.1.1.7:3000/foods');
+        const response = await fetch('http://10.1.1.20:3000/foods');
         const data: FoodProps[] = await response.json();
         setFoods(data);
       } catch (err) {

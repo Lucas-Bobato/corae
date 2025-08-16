@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { FoodProps } from '../../food/card';
-import { FoodList } from '../../food/list';
+import { FoodListItem } from '../../food/list';
 
 export function FavoriteFoods() {
   const [foods, setFoods] = useState<FoodProps[]>([]);
@@ -11,7 +11,7 @@ export function FavoriteFoods() {
   useEffect(() => {
     async function fetchFoods() {
       try {
-        const response = await fetch('http://10.1.1.7:3000/foods');
+        const response = await fetch('http://10.1.1.20:3000/foods');
         const data: FoodProps[] = await response.json();
         setFoods(data);
       } catch (err) {
@@ -37,7 +37,7 @@ export function FavoriteFoods() {
           data={foods.filter(item => item.isFavorite === true)}
           keyExtractor={(item) => item.id}
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <FoodList {...item} />}
+          renderItem={({ item }) => <FoodListItem {...item} />}
         />
       );
     }

@@ -19,7 +19,7 @@ export function PaymentMethodComponent({ onPress }: PaymentMethodProps) {
     <View className="px-4 py-4 border-y border-gray-100">
       <TouchableOpacity
         className="flex-row items-center justify-between"
-        onPress={() => router.push('/paymentMethods')}
+        onPress={() => router.push('/payment')}
       >
         <View className="flex-row items-center flex-1">
           <FontAwesome name="cc-visa" size={20} color="#000" />
