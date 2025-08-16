@@ -31,9 +31,14 @@ export default function Home() {
           </View>
         }
         rightComponent={
-          <TouchableOpacity onPress={() => router.push('/cart')}>
-            <Feather name="shopping-cart" size={24} color="#7D9C4A" />
-          </TouchableOpacity>
+          <View className="flex-row items-center gap-4">
+            <TouchableOpacity onPress={() => router.push('/notifications')}>
+              <Ionicons name="notifications-outline" size={24} color="#7D9C4A" />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push('/cart')}>
+              <Feather name="shopping-cart" size={24} color="#7D9C4A" />
+            </TouchableOpacity>
+          </View>
         }
       />
       <ScrollView

@@ -1,141 +1,260 @@
 {
-  "restaurants": [
-  {
-    "id": "1",
-    "name": "Cantina da Nona",
-    "image": "https://picsum.photos/seed/restaurant1/200",
-    "rating": 4.8,
-    "reviewsCount": "500 avaliações",
-    "isVerified": true,
-    "isFavorite": true,
-    "mainTag": "Italiana",
-    "priceRange": "$$$",
-    "categories": ["massas", "pizza", "vinho", "familiar"],
-    "distance": "2.1km",
-    "status": "Aberto",
-    "waitTime": "45 - 60 min"
-  },
-  {
-    "id": "2",
-    "name": "Burger Bliss",
-    "image": "https://picsum.photos/seed/restaurant2/200",
-    "rating": 4.6,
-    "reviewsCount": "350 avaliações",
-    "isVerified": true,
-    "isFavorite": true,
-    "mainTag": "Hamburgueria",
-    "priceRange": "$$",
-    "categories": ["artesanal", "lanches", "delivery", "bacon"],
-    "distance": "800m",
-    "status": "Aberto",
-    "waitTime": "25 - 40 min"
-  },
-  {
-    "id": "3",
-    "name": "SushiYama",
-    "image": "https://picsum.photos/seed/restaurant3/200",
-    "rating": 4.9,
-    "reviewsCount": "280 avaliações",
-    "isVerified": false,
-    "isFavorite": true,
-    "mainTag": "Japonesa",
-    "priceRange": "$$$",
-    "categories": ["sushi", "frutos do mar", "rodízio"],
-    "distance": "4.5km",
-    "status": "Fechado",
-    "waitTime": "40 - 55 min"
-  },
-  {
-    "id": "4",
-    "name": "Ponto do Açaí",
-    "image": "https://picsum.photos/seed/restaurant4/200",
-    "rating": 4.7,
-    "reviewsCount": "150 avaliações",
-    "isVerified": true,
-    "isFavorite": false,
-    "mainTag": "Açaí",
-    "priceRange": "$",
-    "categories": ["saudável", "açaí", "vegano", "sucos"],
-    "distance": "1.2km",
-    "status": "Aberto",
-    "waitTime": "15 - 25 min"
-  }
-],
-  "foods": [
+  "users": [
     {
       "id": "1",
-      "name": "Salada Ceasar",
-      "image": "https://i.imgur.com/zfw2Vx6.jpeg",
-      "rating": 4.9,
-      "reviewsCount": "(125+)",
+      "name": "João da Silva",
+      "email": "joao.silva@example.com",
+      "phone": "(11) 98765-4321",
+      "addresses": [
+        {
+          "id": "1",
+          "street": "Rua das Flores, 123",
+          "city": "São Paulo",
+          "state": "SP",
+          "zip": "01234-567",
+          "isPrimary": true
+        },
+        {
+          "id": "2",
+          "street": "Avenida Paulista, 1000",
+          "city": "São Paulo",
+          "state": "SP",
+          "zip": "01310-100",
+          "isPrimary": false
+        }
+      ],
+      "paymentMethods": [
+        {
+          "id": "1",
+          "brand": "Visa",
+          "last4": "1234",
+          "isPrimary": true
+        },
+        {
+          "id": "2",
+          "brand": "Mastercard",
+          "last4": "5678",
+          "isPrimary": false
+        }
+      ],
+      "cart": [
+        {
+          "foodId": "101",
+          "quantity": 2
+        },
+        {
+          "foodId": "202",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "Cantina da Nona",
+      "image": "https://picsum.photos/seed/restaurant1/200",
+      "rating": 4.8,
+      "reviewsCount": "500 avaliações",
       "isVerified": true,
       "isFavorite": true,
-      "mainTag": "Sem Glúten",
-      "price": "19,90",
-      "categories": ["saladas", "proteína"],
-      "distance": "1.5km",
+      "mainTag": "Italiana",
+      "priceRange": "$$$",
+      "categories": ["massas", "pizza", "vinho", "familiar"],
+      "distance": "2.1km",
       "status": "Aberto",
-      "waitTime": "30 - 40 min"
+      "waitTime": "45 - 60 min",
+      "menu": [
+        {
+          "id": "101",
+          "name": "Spaghetti Carbonara",
+          "image": "https://i.imgur.com/zfw2Vx6.jpeg",
+          "description": "Massa italiana com ovos, queijo pecorino, pimenta preta e guanciale.",
+          "price": "35.50",
+          "category": "Massas"
+        },
+        {
+          "id": "102",
+          "name": "Pizza Margherita",
+          "image": "https://i.imgur.com/w8Td6rC.jpeg",
+          "description": "Molho de tomate, mussarela fresca, manjericão e azeite.",
+          "price": "42.00",
+          "category": "Pizzas"
+        },
+        {
+          "id": "103",
+          "name": "Vinho Tinto da Casa",
+          "image": "https://i.imgur.com/Fph8faX.jpeg",
+          "description": "Garrafa de 750ml do nosso vinho selecionado.",
+          "price": "60.00",
+          "category": "Bebidas"
+        }
+      ]
     },
     {
       "id": "2",
-      "name": "Omelete",
-      "image": "https://i.imgur.com/WlQYOIr.jpeg",
-      "rating": 4.7,
-      "reviewsCount": "(125+)",
+      "name": "Burger Bliss",
+      "image": "https://picsum.photos/seed/restaurant2/200",
+      "rating": 4.6,
+      "reviewsCount": "350 avaliações",
       "isVerified": true,
       "isFavorite": true,
-      "mainTag": "Sem Glúten",
-      "price": "9,90",
-      "categories": ["ovo", "almoço", "café da manhã"],
-      "distance": "2.5km",
+      "mainTag": "Hamburgueria",
+      "priceRange": "$$",
+      "categories": ["artesanal", "lanches", "delivery", "bacon"],
+      "distance": "800m",
       "status": "Aberto",
-      "waitTime": "20 - 30 min"
+      "waitTime": "25 - 40 min",
+      "menu": [
+        {
+          "id": "201",
+          "name": "Classic Bliss Burger",
+          "image": "https://i.imgur.com/JyyL4FA.jpeg",
+          "description": "Pão brioche, hambúrguer de 180g, queijo cheddar, alface, tomate e molho especial.",
+          "price": "28.90",
+          "category": "Hambúrgueres"
+        },
+        {
+          "id": "202",
+          "name": "Bacon Bomb Burger",
+          "image": "https://i.imgur.com/WlQYOIr.jpeg",
+          "description": "Hambúrguer de 180g, dobro de bacon, queijo prato, cebola caramelizada e maionese de alho.",
+          "price": "32.90",
+          "category": "Hambúrgueres"
+        },
+        {
+          "id": "203",
+          "name": "Batata Frita",
+          "image": "https://i.imgur.com/zfw2Vx6.jpeg",
+          "description": "Porção de 300g de batata frita crocante.",
+          "price": "15.00",
+          "category": "Acompanhamentos"
+        },
+        {
+          "id": "204",
+          "name": "Milkshake de Chocolate",
+          "image": "https://i.imgur.com/Fph8faX.jpeg",
+          "description": "400ml de milkshake cremoso de chocolate.",
+          "price": "18.00",
+          "category": "Bebidas"
+        }
+      ]
     },
     {
       "id": "3",
-      "name": "Suco Verde",
-      "image": "https://i.imgur.com/Fph8faX.jpeg",
-      "rating": 3.9,
-      "reviewsCount": "(25+)",
-      "isVerified": true,
-      "isFavorite": false,
-      "mainTag": "Sucos Naturais",
-      "price": "8,90",
-      "categories": ["bebida", "vegano", "saudável"],
-      "distance": "3.5km",
-      "status": "Aberto",
-      "waitTime": "10 - 15 min"
+      "name": "SushiYama",
+      "image": "https://picsum.photos/seed/restaurant3/200",
+      "rating": 4.9,
+      "reviewsCount": "280 avaliações",
+      "isVerified": false,
+      "isFavorite": true,
+      "mainTag": "Japonesa",
+      "priceRange": "$$$",
+      "categories": ["sushi", "frutos do mar", "rodízio"],
+      "distance": "4.5km",
+      "status": "Fechado",
+      "waitTime": "40 - 55 min",
+      "menu": [
+        {
+          "id": "301",
+          "name": "Combinado Yama (20 peças)",
+          "image": "https://i.imgur.com/JyyL4FA.jpeg",
+          "description": "Seleção do chef com 10 sashimis e 10 sushis variados.",
+          "price": "75.00",
+          "category": "Combinados"
+        },
+        {
+          "id": "302",
+          "name": "Temaki de Salmão",
+          "image": "https://i.imgur.com/w8Td6rC.jpeg",
+          "description": "Alga, arroz, salmão fresco e cream cheese.",
+          "price": "25.00",
+          "category": "Temakis"
+        }
+      ]
     },
     {
       "id": "4",
-      "name": "Combinado Sushi 100 peças",
-      "image": "https://i.imgur.com/JyyL4FA.jpeg",
-      "rating": 4.0,
-      "reviewsCount": "(80+)",
-      "isVerified": false,
-      "isFavorite": true,
-      "mainTag": "Frutos do Mar",
-      "price": "49,90",
-      "categories": ["sushi", "sashimi", "temaki"],
-      "distance": "4.2km",
-      "status": "Fechado",
-      "waitTime": "50 - 60 min"
-    },
-    {
-      "id": "5",
-      "name": "X-Bacon com Fritas",
-      "image": "https://i.imgur.com/w8Td6rC.jpeg",
-      "rating": 4.2,
-      "reviewsCount": "(95+)",
+      "name": "Ponto do Açaí",
+      "image": "https://picsum.photos/seed/restaurant4/200",
+      "rating": 4.7,
+      "reviewsCount": "150 avaliações",
       "isVerified": true,
       "isFavorite": false,
-      "mainTag": "Lanche",
-      "price": "19,90",
-      "categories": ["hambúrguer", "fritas", "lanche"],
-      "distance": "5.0km",
+      "mainTag": "Açaí",
+      "priceRange": "$",
+      "categories": ["saudável", "açaí", "vegano", "sucos"],
+      "distance": "1.2km",
       "status": "Aberto",
-      "waitTime": "25 - 35 min"
+      "waitTime": "15 - 25 min",
+      "menu": [
+        {
+          "id": "401",
+          "name": "Açaí na Tigela 500ml",
+          "image": "https://i.imgur.com/zfw2Vx6.jpeg",
+          "description": "Açaí batido com banana, acompanha granola e mel.",
+          "price": "22.00",
+          "category": "Açaí"
+        },
+        {
+          "id": "402",
+          "name": "Suco Detox",
+          "image": "https://i.imgur.com/Fph8faX.jpeg",
+          "description": "Couve, abacaxi, gengibre e hortelã.",
+          "price": "12.00",
+          "category": "Sucos"
+        }
+      ]
     }
-  ]
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": "1",
+      "restaurantId": "1",
+      "date": "2024-07-20T18:30:00Z",
+      "status": "Entregue",
+      "total": "86.00",
+      "items": [
+        {
+          "foodId": "101",
+          "quantity": 2,
+          "price": "35.50"
+        }
+      ],
+      "deliveryAddress": {
+        "street": "Rua das Flores, 123",
+        "city": "São Paulo",
+        "state": "SP",
+        "zip": "01234-567"
+      }
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "restaurantId": "2",
+      "date": "2024-07-18T20:00:00Z",
+      "status": "Cancelado",
+      "total": "47.90",
+      "items": [
+        {
+          "foodId": "202",
+          "quantity": 1,
+          "price": "32.90"
+        },
+        {
+          "foodId": "203",
+          "quantity": 1,
+          "price": "15.00"
+        }
+      ],
+      "deliveryAddress": {
+        "street": "Avenida Paulista, 1000",
+        "city": "São Paulo",
+        "state": "SP",
+        "zip": "01310-100"
+      }
+    }
+  ],
+  "foods": []
 }

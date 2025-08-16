@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "food",
-    "slug": "food",
+    "name": "Corae",
+    "slug": "corae",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "food",
+    "scheme": "corae",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

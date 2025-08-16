@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { CartContext } from '../../../contexts/CartContext';
 
-interface CartItemProps {
+interface CartItem {
   id: string;
-  nome: string;
-  preco: string;
-  imagem: { uri: string };
+  name: string;
+  price: string;
+  image: string;
+  quantity: number;
 }
 
 interface CartListProps {
@@ -13,74 +16,65 @@ interface CartListProps {
   ListFooterComponent?: React.ReactElement;
 }
 
-const QuantityStepper = () => {
-  const [quantity, setQuantity] = useState(1);
-  const decrement = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1));
-  const increment = () => setQuantity(prev => prev + 1);
-
+const QuantityStepper = ({ quantity, onDecrement, onIncrement }: { quantity: number, onDecrement: () => void, onIncrement: () => void }) => {
   return (
     <View className="flex-row items-center bg-neutral-200 rounded-full px-2 py-1">
-      <TouchableOpacity onPress={decrement}>
+      <TouchableOpacity onPress={onDecrement}>
         <Text className="text-neutral-600 font-bold text-lg px-1">-</Text>
       </TouchableOpacity>
       <Text className="text-neutral-800 font-bold text-base mx-2">{quantity}</Text>
-      <TouchableOpacity onPress={increment}>
+      <TouchableOpacity onPress={onIncrement}>
         <Text className="text-neutral-600 font-bold text-lg px-1">+</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const ProductItem = ({ item }: { item: CartItemProps }) => {
+const ProductItem = ({ item, onUpdateQuantity, onRemove }: { item: CartItem, onUpdateQuantity: (id: string, q: number) => void, onRemove: (id: string) => void }) => {
+  const totalItemPrice = (parseFloat(item.price) * item.quantity).toFixed(2);
+
   return (
     <View className="flex-row items-center justify-between bg-white p-3 mx-4 my-1.5 rounded-xl shadow-sm">
       <View className="flex-row items-center flex-1 mr-2">
         <Image
-          source={item.imagem}
+          source={{ uri: item.image }}
           className="w-16 h-16 rounded-lg bg-gray-100"
           resizeMode="cover"
         />
-        <Text className="ml-4 text-base font-medium text-gray-800 flex-shrink" numberOfLines={2}>{item.nome}</Text>
+        <View className="ml-4 flex-1">
+          <Text className="text-base font-medium text-gray-800 flex-shrink" numberOfLines={2}>{item.name}</Text>
+          <Text className="text-sm text-gray-500">R$ {item.price}</Text>
+        </View>
       </View>
       <View className="flex-row items-center space-x-3">
-        <QuantityStepper />
+        <QuantityStepper
+          quantity={item.quantity}
+          onDecrement={() => onUpdateQuantity(item.id, item.quantity - 1)}
+          onIncrement={() => onUpdateQuantity(item.id, item.quantity + 1)}
+        />
         <Text className="text-base font-semibold text-gray-900 w-20 text-right">
-          R${item.preco.replace(',', '.')}
+          R$ {totalItemPrice}
         </Text>
+        <TouchableOpacity onPress={() => onRemove(item.id)} className="pl-2">
+          <Ionicons name="trash-bin-outline" size={22} color="#EF4444" />
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
 const CartList = ({ ListHeaderComponent, ListFooterComponent }: CartListProps) => {
-  const [cartItems, setCartItems] = useState<CartItemProps[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const cartContext = useContext(CartContext);
 
-  useEffect(() => {
-    async function fetchFoods() {
-      try {
-        const response = await fetch('http://10.1.1.20:3000/foods');
-        const data = await response.json();
+  if (!cartContext) {
+    return (
+      <View className="flex-1 justify-center items-center">
+        <Text>Erro ao carregar o carrinho.</Text>
+      </View>
+    );
+  }
 
-        const formattedData = data.map((food: any) => ({
-          id: food.id,
-          nome: food.name,
-          preco: food.price,
-          imagem: { uri: food.image },
-        }));
-
-        setCartItems(formattedData);
-      } catch (err) {
-        setError('Erro ao carregar os alimentos. Verifique sua conexão e a API.');
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchFoods();
-  }, []);
+  const { cart, loading, updateQuantity, removeFromCart } = cartContext;
 
   if (loading) {
     return (
@@ -91,18 +85,20 @@ const CartList = ({ ListHeaderComponent, ListFooterComponent }: CartListProps) =
     );
   }
 
-  if (error) {
+  if (cart.length === 0) {
     return (
-      <View className="flex-1 justify-center items-center">
-        <Text className="text-red-500 text-lg text-center px-4">{error}</Text>
+      <View className="flex-1 justify-center items-center py-10">
+        {ListHeaderComponent}
+        <Text className="text-gray-500 text-lg mt-8">Seu carrinho está vazio.</Text>
+        {ListFooterComponent}
       </View>
     );
   }
 
   return (
     <FlatList
-      data={cartItems}
-      renderItem={({ item }) => <ProductItem item={item} />}
+      data={cart}
+      renderItem={({ item }) => <ProductItem item={item} onUpdateQuantity={updateQuantity} onRemove={removeFromCart} />}
       keyExtractor={item => item.id}
       contentContainerStyle={{ paddingTop: 10, paddingBottom: 10 }}
       ListHeaderComponent={ListHeaderComponent}

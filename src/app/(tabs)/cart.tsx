@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, Alert, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -10,10 +10,18 @@ import { SectionTitle } from '../../components/profile/settingsTitle';
 import { AddressInfo } from '../../components/checkout/addressInfo';
 import { CheckoutTotal } from '../../components/checkout/checkoutTotal';
 import { CartList } from '../../components/checkout/orderItems';
+import { CartContext } from '../../contexts/CartContext';
 
 export default function CheckoutScreen() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const cartContext = useContext(CartContext);
+
+  if (!cartContext) {
+    return null;
+  }
+
+  const { clearCart } = cartContext;
 
   const handlePlaceOrder = async () => {
     setLoading(true);
@@ -26,7 +34,10 @@ export default function CheckoutScreen() {
         [
           {
             text: 'OK',
-            onPress: () => router.push('/pedidos')
+            onPress: () => {
+              clearCart();
+              router.push('/pedidos');
+            }
           }
         ]
       );
@@ -46,7 +57,7 @@ export default function CheckoutScreen() {
           <Text className="font-bold text-xl text-black">Carrinho</Text>
         }
         rightComponent={
-          <TouchableOpacity>
+          <TouchableOpacity onPress={clearCart}>
             <Ionicons name="trash-outline" size={24} color="#666" />
           </TouchableOpacity>
         }
