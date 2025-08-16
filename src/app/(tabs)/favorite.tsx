@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
-import { Footer } from '../components/footer';
-import { Header } from '../components/header';
-import { TabsFavorite } from '../components/favorite';
+import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
+import { TabsFavorite } from '../../components/favorite';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 

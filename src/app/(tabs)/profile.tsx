@@ -1,10 +1,10 @@
 import { ScrollView, TouchableOpacity, SafeAreaView, Text, StatusBar } from 'react-native';
-import { Footer } from '../components/footer';
-import { Header } from '../components/header';
+import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
 import { Ionicons } from '@expo/vector-icons';
-import { ProfileInfo } from '../components/profile/info';
-import { SettingsItem } from '../components/profile/settingsItem';
-import { SectionTitle } from '../components/profile/settingsTitle';
+import { ProfileInfo } from '../../components/profile/info';
+import { SettingsItem } from '../../components/profile/settingsItem';
+import { SectionTitle } from '../../components/profile/settingsTitle';
 import { useRouter } from 'expo-router';
 
 export default function Perfil() {

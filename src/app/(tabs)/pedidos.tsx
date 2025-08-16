@@ -1,5 +1,5 @@
 import { View, SafeAreaView, StatusBar } from 'react-native';
-import { Footer } from '../components/footer';
+import { Footer } from '../../components/footer';
 
 export default function Pedidos() {
  return (

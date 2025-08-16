@@ -1,10 +1,10 @@
 import { ScrollView, SafeAreaView, Image, View, Text, Pressable, TouchableOpacity, StatusBar } from "react-native";
 import { Ionicons, Feather } from "@expo/vector-icons";
-import { Banner } from "../components/banner";
-import { Header } from "../components/header";
-import { Search } from "../components/search";
-import { Suggestion } from "../components/suggestion";
-import { Footer } from "../components/footer";
+import { Banner } from "../../components/banner";
+import { Header } from "../../components/header";
+import { Search } from "../../components/search";
+import { Suggestion } from "../../components/suggestion";
+import { Footer } from "../../components/footer";
 import { useRouter } from 'expo-router';
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <Header
         leftComponent={
           <Image
-            source={require('../assets/images/logo-corae-no-text.png')}
+            source={require('../../assets/images/logo-corae-no-text.png')}
             className="h-12 w-24"
             resizeMode="contain"
           />

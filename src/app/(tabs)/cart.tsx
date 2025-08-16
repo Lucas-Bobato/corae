@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, Alert, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { Header } from '../components/header';
-import { Footer } from '../components/footer';
-import { PaymentMethodComponent } from '../components/checkout/paymentMethod';
-import { CheckoutButton } from '../components/checkout/checkoutButton';
-import { SectionTitle } from '../components/profile/settingsTitle';
-import { AddressInfo } from '../components/checkout/addressInfo';
-import { CheckoutTotal } from '../components/checkout/checkoutTotal';
-import { CartList } from '../components/checkout/orderItems';
+import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
+import { PaymentMethodComponent } from '../../components/checkout/paymentMethod';
+import { CheckoutButton } from '../../components/checkout/checkoutButton';
+import { SectionTitle } from '../../components/profile/settingsTitle';
+import { AddressInfo } from '../../components/checkout/addressInfo';
+import { CheckoutTotal } from '../../components/checkout/checkoutTotal';
+import { CartList } from '../../components/checkout/orderItems';
 
 export default function CheckoutScreen() {
   const router = useRouter();
