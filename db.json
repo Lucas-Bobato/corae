@@ -256,5 +256,46 @@
       }
     }
   ],
-  "foods": []
+  "foods": [
+    {
+      "id": "101",
+      "name": "Spaghetti Carbonara",
+      "image": "https://i.imgur.com/zfw2Vx6.jpeg",
+      "description": "Massa italiana com ovos, queijo pecorino, pimenta preta e guanciale.",
+      "price": "35.50",
+      "category": "Massas",
+      "restaurantId": "1",
+      "isFavorite": true
+    },
+    {
+      "id": "201",
+      "name": "Classic Bliss Burger",
+      "image": "https://i.imgur.com/JyyL4FA.jpeg",
+      "description": "Pão brioche, hambúrguer de 180g, queijo cheddar, alface, tomate e molho especial.",
+      "price": "28.90",
+      "category": "Hambúrgueres",
+      "restaurantId": "2",
+      "isFavorite": true
+    },
+    {
+      "id": "202",
+      "name": "Bacon Bomb Burger",
+      "image": "https://i.imgur.com/WlQYOIr.jpeg",
+      "description": "Hambúrguer de 180g, dobro de bacon, queijo prato, cebola caramelizada e maionese de alho.",
+      "price": "32.90",
+      "category": "Hambúrgueres",
+      "restaurantId": "2",
+      "isFavorite": false
+    },
+    {
+      "id": "401",
+      "name": "Açaí na Tigela 500ml",
+      "image": "https://i.imgur.com/zfw2Vx6.jpeg",
+      "description": "Açaí batido com banana, acompanha granola e mel.",
+      "price": "22.00",
+      "category": "Açaí",
+      "restaurantId": "4",
+      "isFavorite": true
+    }
+  ]
 }

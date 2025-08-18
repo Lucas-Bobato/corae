@@ -5,6 +5,7 @@ import { useRouter } from 'expo-router';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
 import { RestaurantCard, RestaurantsProps } from '../../components/restaurants/list';
+import db from '../../../db.json';
 
 export default function RestaurantsScreen() {
   const router = useRouter();
@@ -13,14 +14,9 @@ export default function RestaurantsScreen() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchRestaurants() {
+    function fetchRestaurants() {
       try {
-        const response = await fetch('http://10.1.1.20:3000/restaurants');
-        if (!response.ok) {
-          throw new Error('Erro ao buscar restaurantes');
-        }
-        const data: RestaurantsProps[] = await response.json();
-        setRestaurants(data);
+        setRestaurants(db.restaurants);
       } catch (err) {
         setError('Não foi possível carregar a lista de restaurantes. Tente novamente mais tarde.');
       } finally {

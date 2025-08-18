@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { SafeAreaView, Text, TouchableOpacity, Alert, StatusBar } from 'react-native';
+import { SafeAreaView, Text, TouchableOpacity, Alert, StatusBar, View, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Header } from '../../components/header';
@@ -21,11 +21,15 @@ export default function CheckoutScreen() {
     return null;
   }
 
-  const { clearCart } = cartContext;
+  const { cart, clearCart } = cartContext;
+  const isCartEmpty = cart.length === 0;
 
   const handlePlaceOrder = async () => {
+    if (isCartEmpty) {
+      Alert.alert('Carrinho Vazio', 'Adicione itens ao seu carrinho antes de fazer um pedido.');
+      return;
+    }
     setLoading(true);
-    
     setTimeout(() => {
       setLoading(false);
       Alert.alert(
@@ -37,15 +41,15 @@ export default function CheckoutScreen() {
             onPress: () => {
               clearCart();
               router.push('/pedidos');
-            }
-          }
+            },
+          },
         ]
       );
     }, 2000);
   };
 
   return (
-    <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
+    <SafeAreaView className="flex-1 bg-white pt-4">
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <Header
         leftComponent={
@@ -53,38 +57,41 @@ export default function CheckoutScreen() {
             <Ionicons name="arrow-back" size={24} color="black" />
           </TouchableOpacity>
         }
-        centerComponent={
-          <Text className="font-bold text-xl text-black">Carrinho</Text>
-        }
+        centerComponent={<Text className="font-bold text-xl text-black">Carrinho</Text>}
         rightComponent={
-          <TouchableOpacity onPress={clearCart}>
-            <Ionicons name="trash-outline" size={24} color="#666" />
+          <TouchableOpacity onPress={clearCart} disabled={isCartEmpty}>
+            <Ionicons name="trash-outline" size={24} color={isCartEmpty ? '#ccc' : '#666'} />
           </TouchableOpacity>
         }
       />
-      <CartList
-        ListHeaderComponent={
-          <>
-            <SectionTitle title="Resumo do Pedido" />
-          </>
-        }
-        ListFooterComponent={
-          <>
-            <SectionTitle title="Endereço de Entrega" />
-            <AddressInfo />
-            <SectionTitle title="Método de Pagamento" />
-            <PaymentMethodComponent />
-            <SectionTitle title="Total" />
-            <CheckoutTotal />
-          </>
-        }
-      />
+      <ScrollView
+        className="flex-1"
+        contentContainerStyle={{ flexGrow: 1, paddingBottom: 100 }}
+        showsVerticalScrollIndicator={false}
+      >
+        <SectionTitle title="Resumo do Pedido" />
+        {isCartEmpty ? (
+          <View className="flex-1 justify-center items-center p-4">
+            <Text className="text-center text-gray-500">Seu carrinho está vazio.</Text>
+            <TouchableOpacity onPress={() => router.push('/home')} className="mt-4 bg-[#7D9C4A] py-2 px-4 rounded">
+              <Text className="text-white font-bold">Ver restaurantes</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <CartList />
+        )}
 
-      <CheckoutButton
-        onPress={handlePlaceOrder}
-        loading={loading}
-      />
+        <View className="mt-4">
+          <SectionTitle title="Endereço de Entrega" />
+          <AddressInfo />
+          <SectionTitle title="Método de Pagamento" />
+          <PaymentMethodComponent />
+          <SectionTitle title="Total" />
+          <CheckoutTotal />
+        </View>
+      </ScrollView>
 
+      <CheckoutButton onPress={handlePlaceOrder} loading={loading} />
       <Footer />
     </SafeAreaView>
   );

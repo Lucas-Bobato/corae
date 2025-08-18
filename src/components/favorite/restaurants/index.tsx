@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { RestaurantsProps, RestaurantCard } from '../../restaurants/list';
+import { useRouter } from 'expo-router';
+import db from '../../../../db.json';
 
 export function FavoriteRestaurants() {
+  const router = useRouter();
   const [restaurants, setRestaurants] = useState<RestaurantsProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchRestaurants() {
+    function fetchRestaurants() {
       try {
-        const response = await fetch('http://10.1.1.20:3000/restaurants');
-        const data: RestaurantsProps[] = await response.json();
-        setRestaurants(data);
+        setRestaurants(db.restaurants);
       } catch (err) {
         setError('Erro ao carregar restaurantes');
       } finally {
@@ -31,18 +32,28 @@ export function FavoriteRestaurants() {
         return <Text className='text-center mt-5 px-5 text-gray-500'>{error}</Text>;
       }
 
+      const favoriteRestaurants = restaurants.filter(item => item.isFavorite);
+
+      if (favoriteRestaurants.length === 0) {
+        return <Text className='text-center mt-5 px-5 text-gray-500'>Você ainda não tem restaurantes favoritos.</Text>;
+      }
+
       return (
         <FlatList
-          data={restaurants.filter(item => item.isFavorite === true)}
+          data={favoriteRestaurants}
           keyExtractor={(item) => item.id}
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <RestaurantCard {...item} />}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => router.push(`/restaurant/${item.id}`)}>
+              <RestaurantCard {...item} />
+            </TouchableOpacity>
+          )}
         />
       );
     }
 
     return (
-      <View className='px-4 flex flex-col'>
+      <View className='flex-1'>
         {renderContent()}
       </View>
     );
