@@ -4,45 +4,30 @@ import { Ionicons } from '@expo/vector-icons';
 export interface RestaurantsProps {
   id: string;
   name: string;
-  image: string;
-  rating: number;
-  reviewsCount: string;
-  isVerified: boolean;
-  isFavorite: boolean;
-  categories: string[];
-  distance: string;
-  status: string;
-  waitTime: string;
+  address: string;
+  phone: string;
+  contact: string;
 }
 
 export function RestaurantCard(props: RestaurantsProps) {
   return (
-    <Pressable className="w-full flex-row items-center mb-5">
+    <Pressable className="w-full bg-white rounded-lg shadow-md overflow-hidden mb-5">
       <Image
-        source={{ uri: props.image }}
-        className="w-20 h-20 rounded-lg mr-4"
+        source={{ uri: `https://picsum.photos/seed/${props.name}/400` }}
+        className="w-full h-32"
       />
-
-      <View className="flex-1">
-        <Text className="text-base font-bold text-gray-800 mb-1">
+      <View className="p-4">
+        <Text className="text-xl font-bold text-gray-800 mb-2">
           {props.name}
         </Text>
-        
-        <View className="flex-row items-center">
-          <Text className="text-sm text-[#7D9C4A] font-semibold mx-1">
-            {props.rating}
-          </Text>
-          <Ionicons name="star" size={16} color="#7D9C4A" />
-          <Text className="text-sm text-black/50">• {props.reviewsCount}</Text>
+        <View className="flex-row items-center mb-1">
+          <Ionicons name="location-outline" size={16} color="#4B5563" />
+          <Text className="text-sm text-gray-600 ml-2 flex-1">{props.address}</Text>
         </View>
-      </View>
-
-      <View>
-        <Ionicons
-          name={props.isFavorite ? 'heart' : 'heart-outline'}
-          size={24}
-          color={props.isFavorite ? '#E53935' : '#757575'}
-        />
+        <View className="flex-row items-center">
+          <Ionicons name="call-outline" size={16} color="#4B5563" />
+          <Text className="text-sm text-gray-600 ml-2">{props.phone}</Text>
+        </View>
       </View>
     </Pressable>
   );

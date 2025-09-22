@@ -1,301 +1,277 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "name": "João da Silva",
-      "email": "joao.silva@example.com",
-      "phone": "(11) 98765-4321",
-      "addresses": [
-        {
-          "id": "1",
-          "street": "Rua das Flores, 123",
-          "city": "São Paulo",
-          "state": "SP",
-          "zip": "01234-567",
-          "isPrimary": true
-        },
-        {
-          "id": "2",
-          "street": "Avenida Paulista, 1000",
-          "city": "São Paulo",
-          "state": "SP",
-          "zip": "01310-100",
-          "isPrimary": false
-        }
-      ],
-      "paymentMethods": [
-        {
-          "id": "1",
-          "brand": "Visa",
-          "last4": "1234",
-          "isPrimary": true
-        },
-        {
-          "id": "2",
-          "brand": "Mastercard",
-          "last4": "5678",
-          "isPrimary": false
-        }
-      ],
-      "cart": [
-        {
-          "foodId": "101",
-          "quantity": 2
-        },
-        {
-          "foodId": "202",
-          "quantity": 1
-        }
-      ]
-    }
-  ],
   "restaurants": [
     {
       "id": "1",
-      "name": "Cantina da Nona",
-      "image": "https://picsum.photos/seed/restaurant1/200",
-      "rating": 4.8,
-      "reviewsCount": "500 avaliações",
-      "isVerified": true,
-      "isFavorite": true,
-      "mainTag": "Italiana",
-      "priceRange": "$$$",
-      "categories": ["massas", "pizza", "vinho", "familiar"],
-      "distance": "2.1km",
-      "status": "Aberto",
-      "waitTime": "45 - 60 min",
-      "menu": [
-        {
-          "id": "101",
-          "name": "Spaghetti Carbonara",
-          "image": "https://i.imgur.com/zfw2Vx6.jpeg",
-          "description": "Massa italiana com ovos, queijo pecorino, pimenta preta e guanciale.",
-          "price": "35.50",
-          "category": "Massas"
-        },
-        {
-          "id": "102",
-          "name": "Pizza Margherita",
-          "image": "https://i.imgur.com/w8Td6rC.jpeg",
-          "description": "Molho de tomate, mussarela fresca, manjericão e azeite.",
-          "price": "42.00",
-          "category": "Pizzas"
-        },
-        {
-          "id": "103",
-          "name": "Vinho Tinto da Casa",
-          "image": "https://i.imgur.com/Fph8faX.jpeg",
-          "description": "Garrafa de 750ml do nosso vinho selecionado.",
-          "price": "60.00",
-          "category": "Bebidas"
-        }
-      ]
+      "name": "ARMAZÉM GLÚTEN FREE",
+      "address": "Encomendas: @armazemglutenfree",
+      "phone": "(47) 99915-5989/98868-3030",
+      "contact": "Cris"
     },
     {
       "id": "2",
-      "name": "Burger Bliss",
-      "image": "https://picsum.photos/seed/restaurant2/200",
-      "rating": 4.6,
-      "reviewsCount": "350 avaliações",
-      "isVerified": true,
-      "isFavorite": true,
-      "mainTag": "Hamburgueria",
-      "priceRange": "$$",
-      "categories": ["artesanal", "lanches", "delivery", "bacon"],
-      "distance": "800m",
-      "status": "Aberto",
-      "waitTime": "25 - 40 min",
-      "menu": [
-        {
-          "id": "201",
-          "name": "Classic Bliss Burger",
-          "image": "https://i.imgur.com/JyyL4FA.jpeg",
-          "description": "Pão brioche, hambúrguer de 180g, queijo cheddar, alface, tomate e molho especial.",
-          "price": "28.90",
-          "category": "Hambúrgueres"
-        },
-        {
-          "id": "202",
-          "name": "Bacon Bomb Burger",
-          "image": "https://i.imgur.com/WlQYOIr.jpeg",
-          "description": "Hambúrguer de 180g, dobro de bacon, queijo prato, cebola caramelizada e maionese de alho.",
-          "price": "32.90",
-          "category": "Hambúrgueres"
-        },
-        {
-          "id": "203",
-          "name": "Batata Frita",
-          "image": "https://i.imgur.com/zfw2Vx6.jpeg",
-          "description": "Porção de 300g de batata frita crocante.",
-          "price": "15.00",
-          "category": "Acompanhamentos"
-        },
-        {
-          "id": "204",
-          "name": "Milkshake de Chocolate",
-          "image": "https://i.imgur.com/Fph8faX.jpeg",
-          "description": "400ml de milkshake cremoso de chocolate.",
-          "price": "18.00",
-          "category": "Bebidas"
-        }
-      ]
+      "name": "BOM GRADO",
+      "address": "Encomendas: @bomgrado",
+      "phone": "(47) 99773-2273",
+      "contact": "Ronaldo"
     },
     {
       "id": "3",
-      "name": "SushiYama",
-      "image": "https://picsum.photos/seed/restaurant3/200",
-      "rating": 4.9,
-      "reviewsCount": "280 avaliações",
-      "isVerified": false,
-      "isFavorite": true,
-      "mainTag": "Japonesa",
-      "priceRange": "$$$",
-      "categories": ["sushi", "frutos do mar", "rodízio"],
-      "distance": "4.5km",
-      "status": "Fechado",
-      "waitTime": "40 - 55 min",
-      "menu": [
-        {
-          "id": "301",
-          "name": "Combinado Yama (20 peças)",
-          "image": "https://i.imgur.com/JyyL4FA.jpeg",
-          "description": "Seleção do chef com 10 sashimis e 10 sushis variados.",
-          "price": "75.00",
-          "category": "Combinados"
-        },
-        {
-          "id": "302",
-          "name": "Temaki de Salmão",
-          "image": "https://i.imgur.com/w8Td6rC.jpeg",
-          "description": "Alga, arroz, salmão fresco e cream cheese.",
-          "price": "25.00",
-          "category": "Temakis"
-        }
-      ]
+      "name": "CAFÉ MARQUES",
+      "address": "Rua Marques de Olinda, 1097",
+      "phone": "(47) 3025-5303/98416-4080",
+      "contact": "Joci"
     },
     {
       "id": "4",
-      "name": "Ponto do Açaí",
-      "image": "https://picsum.photos/seed/restaurant4/200",
-      "rating": 4.7,
-      "reviewsCount": "150 avaliações",
-      "isVerified": true,
-      "isFavorite": false,
-      "mainTag": "Açaí",
-      "priceRange": "$",
-      "categories": ["saudável", "açaí", "vegano", "sucos"],
-      "distance": "1.2km",
-      "status": "Aberto",
-      "waitTime": "15 - 25 min",
-      "menu": [
-        {
-          "id": "401",
-          "name": "Açaí na Tigela 500ml",
-          "image": "https://i.imgur.com/zfw2Vx6.jpeg",
-          "description": "Açaí batido com banana, acompanha granola e mel.",
-          "price": "22.00",
-          "category": "Açaí"
-        },
-        {
-          "id": "402",
-          "name": "Suco Detox",
-          "image": "https://i.imgur.com/Fph8faX.jpeg",
-          "description": "Couve, abacaxi, gengibre e hortelã.",
-          "price": "12.00",
-          "category": "Sucos"
-        }
-      ]
-    }
-  ],
-  "orders": [
-    {
-      "id": "1",
-      "userId": "1",
-      "restaurantId": "1",
-      "date": "2024-07-20T18:30:00Z",
-      "status": "Entregue",
-      "total": "86.00",
-      "items": [
-        {
-          "foodId": "101",
-          "quantity": 2,
-          "price": "35.50"
-        }
-      ],
-      "deliveryAddress": {
-        "street": "Rua das Flores, 123",
-        "city": "São Paulo",
-        "state": "SP",
-        "zip": "01234-567"
-      }
+      "name": "CHEIRO DE CAFÉ BY DON EDU",
+      "address": "Rua Rolf Colin, 109 – Sala 13",
+      "phone": "(47) 98808-6365",
+      "contact": "Tiago"
     },
     {
-      "id": "2",
-      "userId": "1",
-      "restaurantId": "2",
-      "date": "2024-07-18T20:00:00Z",
-      "status": "Cancelado",
-      "total": "47.90",
-      "items": [
-        {
-          "foodId": "202",
-          "quantity": 1,
-          "price": "32.90"
-        },
-        {
-          "foodId": "203",
-          "quantity": 1,
-          "price": "15.00"
-        }
-      ],
-      "deliveryAddress": {
-        "street": "Avenida Paulista, 1000",
-        "city": "São Paulo",
-        "state": "SP",
-        "zip": "01310-100"
-      }
-    }
-  ],
-  "foods": [
-    {
-      "id": "101",
-      "name": "Spaghetti Carbonara",
-      "image": "https://i.imgur.com/zfw2Vx6.jpeg",
-      "description": "Massa italiana com ovos, queijo pecorino, pimenta preta e guanciale.",
-      "price": "35.50",
-      "category": "Massas",
-      "restaurantId": "1",
-      "isFavorite": true
+      "id": "5",
+      "name": "COXA NOSTRA Coxinhas sem Glúten",
+      "address": "Encomendas: @coxanostra",
+      "phone": "(47) 99929-8022",
+      "contact": "Livia"
     },
     {
-      "id": "201",
-      "name": "Classic Bliss Burger",
-      "image": "https://i.imgur.com/JyyL4FA.jpeg",
-      "description": "Pão brioche, hambúrguer de 180g, queijo cheddar, alface, tomate e molho especial.",
-      "price": "28.90",
-      "category": "Hambúrgueres",
-      "restaurantId": "2",
-      "isFavorite": true
+      "id": "6",
+      "name": "DELICIAS DA FÊ",
+      "address": "Encomendas: @deliciasda.fe",
+      "phone": "(47) 99919-4636",
+      "contact": "Fernanda"
     },
     {
-      "id": "202",
-      "name": "Bacon Bomb Burger",
-      "image": "https://i.imgur.com/WlQYOIr.jpeg",
-      "description": "Hambúrguer de 180g, dobro de bacon, queijo prato, cebola caramelizada e maionese de alho.",
-      "price": "32.90",
-      "category": "Hambúrgueres",
-      "restaurantId": "2",
-      "isFavorite": false
+      "id": "7",
+      "name": "DIGNO SEM GLÚTEN (Conf. afetiva)",
+      "address": "Encomendas: @digno.atelier",
+      "phone": "(47) 98814-8123",
+      "contact": "Ana Carolina"
     },
     {
-      "id": "401",
-      "name": "Açaí na Tigela 500ml",
-      "image": "https://i.imgur.com/zfw2Vx6.jpeg",
-      "description": "Açaí batido com banana, acompanha granola e mel.",
-      "price": "22.00",
-      "category": "Açaí",
-      "restaurantId": "4",
-      "isFavorite": true
+      "id": "8",
+      "name": "DI MANGIARE",
+      "address": "Mercados e Verdureiras",
+      "phone": "Instagram @dimangiare",
+      "contact": ""
+    },
+    {
+      "id": "9",
+      "name": "DOLCE DI CARLINI",
+      "address": "Encomendas: @dolcedicarlini",
+      "phone": "(47) 98446-6418",
+      "contact": "Carla"
+    },
+    {
+      "id": "10",
+      "name": "DULCINÉIA CABRAL",
+      "address": "Encomendas: @dulcineia_cabral",
+      "phone": "(47) 99949-4218",
+      "contact": "Dulcinéia"
+    },
+    {
+      "id": "11",
+      "name": "ECATARINA GLUTEN FREE",
+      "address": "Rua Otto Boehm, 856 – América",
+      "phone": "(47) 3433-8045",
+      "contact": "Inst.@e_glutenfree"
+    },
+    {
+      "id": "12",
+      "name": "ESSÊNCIA DE BAUNILHA",
+      "address": "Rua Visconde de Mauá, 1837",
+      "phone": "(47) 99965-1059",
+      "contact": ""
+    },
+    {
+      "id": "13",
+      "name": "ESSÊNCIA SAUDÁVEL",
+      "address": "Encomendas @essenciasaudavel",
+      "phone": "(47) 99785-6491",
+      "contact": "Ana Flavia"
+    },
+    {
+      "id": "14",
+      "name": "FRANGUINI.COM",
+      "address": "Rua Pedro Mariano de Borba, 95",
+      "phone": "47 99222-5363",
+      "contact": "Rocssani"
+    },
+    {
+      "id": "15",
+      "name": "GODISCO ROSQUERIA",
+      "address": "Av. Getúlio Vargas, 377 – Bucarein",
+      "phone": "",
+      "contact": ""
+    },
+    {
+      "id": "16",
+      "name": "GOOD DIET JOINVILLE",
+      "address": "Rua Mal. Hermes, 1270 Glória",
+      "phone": "(47) 99905-6118",
+      "contact": ""
+    },
+    {
+      "id": "17",
+      "name": "KAZE JAPANESE",
+      "address": "Rua Campos Sales, 1105 sala 3",
+      "phone": "(47) 3202-6373",
+      "contact": "Delivery"
+    },
+    {
+      "id": "18",
+      "name": "KING MIX",
+      "address": "Encomendas / https://kingmix.com.br",
+      "phone": "Instagram @kingmixsemgluten",
+      "contact": ""
+    },
+    {
+      "id": "19",
+      "name": "LISIANE DA MAIA (Pães, Pizzas)",
+      "address": "Encomendas por Whatsapp",
+      "phone": "(47) 99958-1904",
+      "contact": "lisianedamaia@gmail.com"
+    },
+    {
+      "id": "20",
+      "name": "MAIS SAÚDE PÃES",
+      "address": "Encomendas: @paes_maissaude",
+      "phone": "instagram: @paes_maissaude",
+      "contact": ""
+    },
+    {
+      "id": "21",
+      "name": "MAKESLÊ (Maquiagem/Skin Care)",
+      "address": "Encomendas @makesle",
+      "phone": "(47) 99921-8868",
+      "contact": "Lu"
+    },
+    {
+      "id": "22",
+      "name": "M&K SALGADOS",
+      "address": "Encomendas @mek_salgados",
+      "phone": "(47) 3842-2030",
+      "contact": "Karoline"
+    },
+    {
+      "id": "23",
+      "name": "MUNDO FIT CONFEITARIA",
+      "address": "Rua Lages, 766",
+      "phone": "(47) 3207-1877",
+      "contact": "Renata"
+    },
+    {
+      "id": "24",
+      "name": "NO ESPAÇO FIT",
+      "address": "Rua Otto Pfuetzenreuter, 231 Costa Silva",
+      "phone": "Instagram: @noespacofit",
+      "contact": "Max"
+    },
+    {
+      "id": "25",
+      "name": "VAN HEALTHY (Marmitas)",
+      "address": "Encomendas : @vanhealthy",
+      "phone": "(47) 98803-9703",
+      "contact": ""
+    },
+    {
+      "id": "26",
+      "name": "VERA PRODUTOS NATURAIS",
+      "address": "Rua Dr. Plácido Olimpio de Oliveira, 1272",
+      "phone": "(47) 3121-9544",
+      "contact": ""
+    },
+    {
+      "id": "27",
+      "name": "VERITA JOINVILLE",
+      "address": "Rua Orestes Guimarães, 480",
+      "phone": "(47) 3027-5351",
+      "contact": ""
+    },
+    {
+      "id": "28",
+      "name": "MUNDO DI CHOCOLATE",
+      "address": "Rede de Fondue Express Shopping",
+      "phone": "",
+      "contact": ""
+    },
+    {
+      "id": "29",
+      "name": "JACK BURGUER",
+      "address": "Rua Florianópolis, 2035 – Itaum",
+      "phone": "(47) 99936-7765",
+      "contact": ""
+    },
+    {
+      "id": "30",
+      "name": "SAPORITO",
+      "address": "Shopping Mueller",
+      "phone": "(47) 3903-3214",
+      "contact": "Shopping"
+    },
+    {
+      "id": "31",
+      "name": "ACHEI TUDO SEM GLUTEN",
+      "address": "R. Rio Grande do Sul, Piçaras/SC",
+      "phone": "(47) 99711-3600",
+      "contact": "Désirée"
+    },
+    {
+      "id": "32",
+      "name": "BAZAR DA CIANA",
+      "address": "Rua Lair Carvalho Piazeira, 281 Centro – Balneário Barra do Sul",
+      "phone": "(47) 9 9921-8868",
+      "contact": "Luciana"
+    },
+    {
+      "id": "33",
+      "name": "CHEF MARIA LUTKE",
+      "address": "Encomendas @chefmarialutke",
+      "phone": "(47) 99689-2541",
+      "contact": "Maria Clara"
+    },
+    {
+      "id": "34",
+      "name": "EMPÓRIO CAFÉ FUNCIONAL",
+      "address": "Rua Paralela BR 101 , 2311 SL 1 Itajuba – Barra Velha/SC",
+      "phone": "",
+      "contact": ""
+    },
+    {
+      "id": "35",
+      "name": "FELIZZE COZINHA INCLUSIVA",
+      "address": "Rua Roberto Ziemann, 2651 Amizade (Almoço) Jaraguá do Sul/SC",
+      "phone": "(47) 98488-3879",
+      "contact": "Michele"
+    },
+    {
+      "id": "36",
+      "name": "FELIZZE COZINHA INCLUSIVA",
+      "address": "Rua Arthur Gumz, 693 (Pizzaria) Jaraguá do Sul/SC",
+      "phone": "(47) 98488-3879",
+      "contact": "Michele"
+    },
+    {
+      "id": "37",
+      "name": "NOU GLUTEN FREE @nougluten",
+      "address": "Rua Barão do Rio Branco, 611 Sala 2 Centro – Jaraguá do Sul",
+      "phone": "(47) 99181-2030",
+      "contact": "Simone"
+    },
+    {
+      "id": "38",
+      "name": "ROSANGELA HOFFMANN WOLNYCOMIDASESPECIAIS",
+      "address": "Encomendas – São Bento do Sul",
+      "phone": "(47) 99744-7612",
+      "contact": "Rosangela"
+    },
+    {
+      "id": "39",
+      "name": "SECRET GARDEN",
+      "address": "Encomendas – Jaraguá do Sul/SC",
+      "phone": "(47) 99666-5370",
+      "contact": "Salete"
     }
   ]
 }

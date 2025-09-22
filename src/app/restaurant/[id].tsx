@@ -1,19 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, Text, TouchableOpacity, StatusBar, FlatList, ActivityIndicator, View, Image } from 'react-native';
+import { SafeAreaView, Text, TouchableOpacity, StatusBar, ActivityIndicator, View, Image, ScrollView, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Header } from '../../components/header';
-import { FoodListItem } from '../../components/food/list';
-import { RestaurantsProps } from '../../components/restaurants/list';
-import db from '../../../db.json';
-import { FoodProps } from '../../components/food/card';
+import { Header } from './../../components/header';
+import { RestaurantsProps } from './../../components/restaurants/list';
+import db from './../../../db.json';
+
+const renderContactInfo = (info: string) => {
+    if (!info) return null;
+
+    let iconName: any = 'call';
+    let text = info;
+    let action = () => Linking.openURL(`tel:${info}`);
+
+    if (info.includes('@')) {
+      if (info.includes('instagram')) {
+        iconName = 'logo-instagram';
+        text = info.replace('Instagram ', '');
+        action = () => Linking.openURL(`https://instagram.com/${text.replace('@', '')}`);
+      } else if (info.includes('gmail.com')) {
+        iconName = 'mail';
+        text = info;
+        action = () => Linking.openURL(`mailto:${info}`);
+      }
+    } else if (info.toLowerCase().includes('instagram')) {
+      iconName = 'logo-instagram';
+      text = info.replace('instagram: ', '');
+      action = () => Linking.openURL(`https://instagram.com/${text.replace('@', '')}`);
+    }
+
+    return (
+      <TouchableOpacity onPress={action}>
+        <View className="flex-row items-center">
+          <Ionicons name={iconName} size={20} color="#4B5563" />
+          <Text className="text-base text-gray-700 ml-3">{text}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
 export default function RestaurantDetailsScreen() {
   const router = useRouter();
   const { id } = useLocalSearchParams();
 
   const [restaurant, setRestaurant] = useState<RestaurantsProps | null>(null);
-  const [menu, setMenu] = useState<FoodProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,10 +52,9 @@ export default function RestaurantDetailsScreen() {
       if (!id) return;
       setLoading(true);
       try {
-        const restaurantData = db.restaurants.find(r => r.id === id);
+        const restaurantData = db.restaurants.find((r: RestaurantsProps) => r.id === id);
         if (restaurantData) {
           setRestaurant(restaurantData);
-          setMenu(restaurantData.menu || []);
         } else {
           throw new Error('Restaurante não encontrado');
         }
@@ -41,7 +70,7 @@ export default function RestaurantDetailsScreen() {
 
   if (loading) {
     return (
-      <View className="flex-1 justify-center items-center">
+      <View className="flex-1 justify-center items-center bg-white">
         <ActivityIndicator size="large" color="#7D9C4A" />
       </View>
     );
@@ -59,7 +88,7 @@ export default function RestaurantDetailsScreen() {
   }
 
   return (
-    <SafeAreaView className="w-full flex-1 pt-4 mb-auto">
+    <SafeAreaView className="w-full flex-1 pt-4 bg-white">
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <Header
         leftComponent={
@@ -72,46 +101,26 @@ export default function RestaurantDetailsScreen() {
             {restaurant.name}
           </Text>
         }
-        rightComponent={
-          <TouchableOpacity>
-            <Ionicons name={restaurant.isFavorite ? "heart" : "heart-outline"} size={24} color="#7D9C4A" />
-          </TouchableOpacity>
-        }
+        rightComponent={<View className="w-6" />}
       />
-      <FlatList
-        data={menu}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => router.push(`/food/${item.id}`)}
-            className="px-4"
-          >
-            <FoodListItem {...item} />
-          </TouchableOpacity>
-        )}
-        ListHeaderComponent={
-          <View>
-            <Image
-              source={{ uri: restaurant.image }}
-              className="w-full h-48"
-            />
-            <View className="p-4">
-              <Text className="text-2xl font-bold mt-4">{restaurant.name}</Text>
-              <View className="flex-row items-center mt-2">
-                <Ionicons name="star" size={16} color="#7D9C4A" />
-                <Text className="text-sm text-[#7D9C4A] font-semibold mx-1">
-                  {restaurant.rating}
-                </Text>
-                <Text className="text-sm text-black/50">({restaurant.reviewsCount})</Text>
-              </View>
-              <Text className="text-lg font-bold mt-6 mb-2">Cardápio</Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Image
+          source={{ uri: `https://picsum.photos/seed/${restaurant.name}/400` }}
+          className="w-full h-56"
+        />
+        <View className="p-5">
+          <Text className="text-3xl font-bold text-gray-900">{restaurant.name}</Text>
+
+          <View className="mt-4 space-y-3">
+            <View className="flex-row items-start">
+              <Ionicons name="location-sharp" size={24} color="#4B5563" className="mt-1" />
+              <Text className="text-base text-gray-700 ml-3 flex-1">{restaurant.address}</Text>
             </View>
+            {renderContactInfo(restaurant.phone)}
+            {renderContactInfo(restaurant.contact)}
           </View>
-        }
-        ListEmptyComponent={<Text className='text-center mt-5 px-5 text-gray-500'>Este restaurante ainda não tem cardápio.</Text>}
-        contentContainerStyle={{ paddingBottom: 24 }}
-        showsVerticalScrollIndicator={false}
-      />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
