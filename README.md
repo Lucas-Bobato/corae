@@ -16,7 +16,7 @@ Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina. Voc
 
 1.  Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/corae.git
+    git clone https://github.com/Lucas-Bobato/corae.git
     ```
 2.  Instale os pacotes NPM:
     ```bash
@@ -35,15 +35,9 @@ Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina. Voc
 
 ## ✨ Principais Funcionalidades
 
--   **Autenticação de Usuário:** Funcionalidade de cadastro e login seguros.
 -   **Listagem de Restaurantes:** Navegue por uma lista de restaurantes disponíveis.
 -   **Navegação de Cardápios:** Veja os menus e detalhes de cada item de comida.
--   **Carrinho de Compras:** Adicione e gerencie itens no carrinho.
--   **Processo de Checkout:** Faça pedidos com endereços e métodos de pagamento salvos.
--   **Histórico de Pedidos:** Veja os pedidos anteriores e seus status.
--   **Favoritos:** Marque restaurantes e itens de comida favoritos para acesso rápido.
--   **Funcionalidade de Busca:** Encontre restaurantes e itens de comida facilmente.
--   **Gerenciamento de Perfil:** Atualize informações do usuário, endereços e detalhes de pagamento.
+-   **Funcionalidade de Busca:** Encontre restaurantes facilmente.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -63,7 +57,6 @@ src/
 ├── app/                # Rotas e telas da aplicação (usando Expo Router)
 ├── assets/             # Imagens, fontes e outros recursos estáticos
 ├── components/         # Componentes de UI reutilizáveis
-├── contexts/           # Contextos React para gerenciamento de estado (ex: CartContext)
 └── styles/             # Estilos globais e configurações
 ```
 
