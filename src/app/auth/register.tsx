@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import "nativewind";
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -26,6 +26,11 @@ export default function Register() {
         </TouchableOpacity>
       </View>
       <View className="flex-1 items-center justify-center p-4">
+        <Image 
+          source={require('../../assets/images/logo-corae.png')}
+          className="w-32 h-24 mb-6"
+          resizeMode="contain"
+        />
         <Text className="text-3xl font-bold mb-8">Criar conta</Text>
         <TextInput
           className="h-12 w-full border border-gray-300 rounded-lg px-4 mb-4"
