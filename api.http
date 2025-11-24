@@ -1,0 +1,30 @@
+### Criar usuário
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Lucas",
+  "email": "lucas@corae.com",
+  "password": "123456"
+}
+
+###
+
+### Login
+POST http://localhost:8080/api/users/login
+Content-Type: application/json
+
+{
+  "email": "lucas@corae.com",
+  "password": "123456"
+}
+
+###
+
+### Listar restaurantes
+GET http://localhost:8080/api/restaurants
+
+###
+
+### Listar reviews
+GET http://localhost:8080/api/reviews
